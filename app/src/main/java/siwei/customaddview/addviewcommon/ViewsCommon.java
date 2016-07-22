@@ -1,5 +1,6 @@
 package siwei.customaddview.addviewcommon;
 
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -18,7 +19,7 @@ public abstract class ViewsCommon<VH extends ViewsCommon.ViewHolder> {
     /**绑定到父布局中*/
     public void bindParent(ViewsCommon parentCommon){
         mParentView=parentCommon;
-        mVH=onCreateChildsViewHolder();
+        mVH=onCreateChildsViewHolder(parentCommon.getViewHolder().baseView.getContext());
         mVH.initViews(mVH.baseView);
         mVH.initEvent();
         mVH.initData();
@@ -69,7 +70,7 @@ public abstract class ViewsCommon<VH extends ViewsCommon.ViewHolder> {
     }
 
     /**创建布局控件*/
-    protected abstract VH onCreateChildsViewHolder();
+    protected abstract VH onCreateChildsViewHolder(Context context);
 
     /**ChildView 布局处理*/
     public static abstract class ViewHolder {

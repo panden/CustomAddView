@@ -1,5 +1,6 @@
 package siwei.customaddview.addviewcommon;
 
+import android.content.Context;
 import android.view.View;
 
 /**
@@ -14,7 +15,7 @@ public class BaseParentViewsCommon extends ViewsCommon<BaseParentViewsCommon.Bas
     }
 
     @Override
-    protected BaseParentViewHolder onCreateChildsViewHolder() {
+    protected BaseParentViewHolder onCreateChildsViewHolder(Context context) {
         return new BaseParentViewHolder(mBaseView);
     }
 
