@@ -1,5 +1,6 @@
 package siwei.customaddview;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -13,7 +14,7 @@ import siwei.customaddview.addcommon.AddViewHolderCommon;
 public class MainActivity extends AppCompatActivity {
 
     private LinearLayout parent_view;
-    private Button change_data_btn, load_btn1, load_btn2, remove_load_btn;
+    private Button change_data_btn, load_btn1, load_btn2, remove_load_btn, go_btn;
     private AddViewHolderCommon mAddView;
     private AddViewHolderCommon.BindParentView mBindParentView;
 
@@ -29,12 +30,14 @@ public class MainActivity extends AppCompatActivity {
         load_btn2= (Button) findViewById(R.id.load_btn2);
         change_data_btn= (Button) findViewById(R.id.change_data_btn);
         remove_load_btn= (Button) findViewById(R.id.remove_load_btn);
+        go_btn= (Button) findViewById(R.id.go_btn);
 
         mBindParentView=new AddViewHolderCommon.BindParentView(parent_view);
         load_btn1.setOnClickListener(mClickListener);
         load_btn2.setOnClickListener(mClickListener);
         change_data_btn.setOnClickListener(mClickListener);
         remove_load_btn.setOnClickListener(mClickListener);
+        go_btn.setOnClickListener(mClickListener);
 
     }
 
@@ -72,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.remove_load_btn:
                     //removeview这样调用，才会执行AddViewHolderCommon中的onParentRemoveViewAfter、onParentRemoveViewBefore
                     mBindParentView.removeAllChildViews();
+                    break;
+                case R.id.go_btn:
+                    //把View进行模块化去动态添加的demo
+                    startActivity(new Intent(MainActivity.this, GameActivity.class));
                     break;
             }
         }

@@ -16,10 +16,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/start_game_btn"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="开始游戏"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/add_game_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/start_game_btn"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/start_game_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="开始游戏"/>
+
+    </RelativeLayout>
+
+
 
 </LinearLayout>
