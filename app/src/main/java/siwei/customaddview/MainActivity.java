@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     mAddView=new Add1();
                     mAddView.setOnChildDataChangeListener(mChangeListener);
                     mAddView.bindParentView(mBindParentView);
+
                     break;
                 case R.id.load_btn2:
                     mAddView=new Add2();
